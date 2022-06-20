@@ -1,11 +1,11 @@
-package pages;
+package pages.helpDesk;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class MainPage extends BasePage{
+public class MainPage extends BasePage {
 
 	@FindBy(name = "queue")
 	private WebElement queueSelElement;

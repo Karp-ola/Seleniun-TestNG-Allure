@@ -1,18 +1,20 @@
+package addressBook;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.BasePage;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import pages.helpDesk.BasePage;
 import utils.ConfigProvider;
 
 import java.time.Duration;
 
-abstract public class BaseTest {
+abstract public class BaseTest2 {
 
-	protected WebDriver driver;
+	WebDriver driver;
 
-	@BeforeEach
+	@BeforeMethod
 	public void setUp(){
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
@@ -20,12 +22,16 @@ abstract public class BaseTest {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		BasePage.setDriver(driver);
-		driver.get(ConfigProvider.URL);
+		driver.get(ConfigProvider.ADDTESS_BOOK_URL);
 	}
 
-	@AfterEach
+	@AfterMethod
 	public void tearDown(){
 		driver.close();
 		driver.quit();
 	}
+
+
+
 }
+

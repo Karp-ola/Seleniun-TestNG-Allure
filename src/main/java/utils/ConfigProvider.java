@@ -13,7 +13,8 @@ public interface ConfigProvider {
 			    : ConfigFactory.load("application.conf");
 	}
 
-	String URL = readFromConf().getString("url");
+	String HELP_DESK_URL = readFromConf().getString("urls.helpDesk");
+	String ADDTESS_BOOK_URL = readFromConf().getString("urls.addressBook");
 	String USER_LOGIN = readFromConf().getString("usersParams.login");
 	String USER_PASSWORD = readFromConf().getString("usersParams.password");
 	String SUMMARY = readFromConf().getString("ticketData.summary");

@@ -1,10 +1,11 @@
-package pages;
+package pages.helpDesk;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.helpDesk.BasePage;
 
-public class TicketPage extends BasePage{
+public class TicketPage extends BasePage {
 
 	@FindBy(xpath = "//div[@class='table-responsive']/table/thead/tr/th/h3")
 	private WebElement summary;

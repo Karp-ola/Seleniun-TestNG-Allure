@@ -1,10 +1,10 @@
-package pages;
+package pages.helpDesk;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TicketSubmittedPage extends BasePage{
+public class TicketSubmittedPage extends BasePage {
 
 	@FindBy(id = "userDropdown")
 	private WebElement loginButton;

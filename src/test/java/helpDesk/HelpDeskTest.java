@@ -1,9 +1,12 @@
+package helpDesk;
+
 import io.qameta.allure.Description;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import pages.MainPage;
-import pages.TicketPage;
-import pages.TicketSubmittedPage;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pages.helpDesk.MainPage;
+import pages.helpDesk.TicketPage;
+import pages.helpDesk.TicketSubmittedPage;
 import utils.ConfigProvider;
 import utils.StringModifier;
 
@@ -32,9 +35,9 @@ public class HelpDeskTest extends BaseTest {
 				.clickOnTicket(ConfigProvider.SUMMARY);
 		Thread.sleep(5000);
 
-		Assertions.assertEquals(ticketPage.getDescription().getText(), ConfigProvider.DESCRIPTION);
-		Assertions.assertEquals(ticketPage.getEmail().getText(), ConfigProvider.EMAIL);
-		Assertions.assertEquals(ticketPage.getPriority().getText(), ConfigProvider.PRIORITY);
+		Assert.assertEquals(ticketPage.getDescription().getText(), ConfigProvider.DESCRIPTION);
+		Assert.assertEquals(ticketPage.getEmail().getText(), ConfigProvider.EMAIL);
+		Assert.assertEquals(ticketPage.getPriority().getText(), ConfigProvider.PRIORITY);
 
 	}
 }

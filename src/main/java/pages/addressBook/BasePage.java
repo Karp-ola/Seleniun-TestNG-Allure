@@ -1,11 +1,13 @@
-package pages;
+package pages.addressBook;
 
 import org.openqa.selenium.WebDriver;
 
-abstract public class BasePage {
+public class BasePage {
+
 	protected static WebDriver driver;
 
 	public static void setDriver(WebDriver webDriver){
 		driver = webDriver;
 	}
+
 }

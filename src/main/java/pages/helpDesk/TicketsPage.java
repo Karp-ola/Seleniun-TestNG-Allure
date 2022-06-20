@@ -1,4 +1,4 @@
-package pages;
+package pages.helpDesk;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
