@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignUpPage extends BasePage{
+public class SignUpPage extends BasePageAB{
 
 	@FindBy(id = "user_email")
 	public WebElement emailField;
@@ -36,6 +36,10 @@ public class SignUpPage extends BasePage{
 	public SignUpPage clickSignUpButton(){
 		signUpButton.click();
 		return this;
+	}
+
+	public WebElement getSignIpPageLink() {
+		return signIpPageLink;
 	}
 
 	public SignUpPage() {

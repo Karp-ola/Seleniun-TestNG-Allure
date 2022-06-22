@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BasePage {
+public class LoginPage extends BasePageAB {
 
 	@FindBy(name = "commit")
 	private WebElement singInButton;
@@ -12,7 +12,7 @@ public class LoginPage extends BasePage {
 	@FindBy(id = "session_email")
 	private WebElement emailField;
 
-	@FindBy(id = "session_email")
+	@FindBy(id = "session_password")
 	private WebElement passwordField;
 
 	@FindBy(xpath = "//div[@class='row']/a")
@@ -34,9 +34,13 @@ public class LoginPage extends BasePage {
 		return this;
 	}
 
-	public LoginPage clickSignInButton(){
+	public AfterSignInPage clickSignInButton(){
 		singInButton.click();
-		return this;
+		return new AfterSignInPage();
+	}
+
+	public WebElement getSingInButton() {
+		return singInButton;
 	}
 
 	public LoginPage() {

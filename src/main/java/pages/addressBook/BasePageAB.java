@@ -2,7 +2,7 @@ package pages.addressBook;
 
 import org.openqa.selenium.WebDriver;
 
-public class BasePage {
+abstract public class BasePageAB {
 
 	protected static WebDriver driver;
 

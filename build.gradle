@@ -13,19 +13,56 @@ repositories {
 dependencies {
     testImplementation 'org.testng:testng:7.4.0'
     testImplementation 'org.aspectj:aspectjweaver:1.9.5'
-    testImplementation 'io.qameta.allure:allure-junit5:2.12.1'
     testImplementation 'io.qameta.allure:allure-commandline:2.12.1'
     testImplementation 'io.qameta.allure:allure-assertj:2.12.1'
     testImplementation 'io.qameta.allure:allure-rest-assured:2.12.1'
     testImplementation 'io.qameta.allure:allure-java-commons:2.12.1'
+    implementation 'io.qameta.allure:allure-java-commons:2.12.1'
 
     implementation 'org.seleniumhq.selenium:selenium-java:4.2.1'
     implementation 'com.typesafe:config:1.4.1'
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.2.0'
+
+    implementation 'com.github.automatedowl:allure-environment-writer:1.0.0'
+
+}
+tasks.withType(Test){
+    useTestNG()
+}
+tasks.register('AllAddressTests', Test).configure() {
+    filter{
+        includeTestsMatching("addressBook*")
+    }
+    doFirst{
+        println '-----Starting Gradle Task addressTests-----'
+    }
+    doLast{
+        println '-----Ending Gradle Task addressTests-----'
+    }
+}
+tasks.register('ABSmokeTests', Test).configure(){
+    filter{
+        includeTestsMatching("addressBook.AddressTest")
+    }
+    doFirst{
+        println '-----Starting Gradle Task ABSmokeTest-----'
+    }
+    doLast{
+        println '-----Ending Gradle Task ABSmokeTest-----'
+    }
 }
 
-test {
-    useTestNG()
+tasks.register('ABLoginTests', Test).configure(){
+    filter{
+        includeTestsMatching("addressBook.ABLoginTest")
+    }
+    dependsOn 'ABSmokeTests'
+    doFirst{
+        println '-----Starting Gradle Task ABSmokeTest-----'
+    }
+    doLast{
+        println '-----Ending Gradle Task ABSmokeTest-----'
+    }
 }
 
 allure{

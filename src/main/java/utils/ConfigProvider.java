@@ -17,6 +17,9 @@ public interface ConfigProvider {
 	String ADDTESS_BOOK_URL = readFromConf().getString("urls.addressBook");
 	String USER_LOGIN = readFromConf().getString("usersParams.login");
 	String USER_PASSWORD = readFromConf().getString("usersParams.password");
+	String USER_ADDRESS_BOOK_LOGIN = readFromConf().getString("usersParams.addressBook.login");
+	String USER_ADDRESS_BOOK_PASSWORD = readFromConf().getString("usersParams.addressBook.password");
+
 	String SUMMARY = readFromConf().getString("ticketData.summary");
 	String QUEUE = readFromConf().getString("ticketData.queue");
 	String DESCRIPTION = readFromConf().getString("ticketData.description");

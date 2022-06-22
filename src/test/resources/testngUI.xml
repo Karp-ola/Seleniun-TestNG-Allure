@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test_suite">
+    <groups>
+        <run>
+            <include name="UITests"/>
+        </run>
+    </groups>
+    <test name="Address Book Tests">
+        <classes>
+            <class name="addressBook.ABLoginTest"/>
+            <class name="addressBook.AddressTest"/>
+        </classes>
+    </test>
+    <test name="Help Desk Tests">
+        <classes>
+            <class name="helpDesk.HelpDeskTest"/>
+        </classes>
+    </test>
+</suite>

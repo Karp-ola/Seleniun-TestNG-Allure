@@ -12,10 +12,9 @@ import utils.StringModifier;
 
 public class HelpDeskTest extends BaseTest {
 
-	@Test
+	@Test(groups = {"HDTests", "UITests"})
 	@Description("E2E test for creating ticket, searching and checking fields of created ticket")
 	public void createAndCheckTicket() throws InterruptedException {
-
 		MainPage mainPage = new MainPage();
 
 		TicketSubmittedPage ticketSubmittedPage = mainPage
