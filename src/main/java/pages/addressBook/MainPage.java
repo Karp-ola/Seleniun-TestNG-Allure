@@ -10,8 +10,7 @@ public class MainPage extends BasePageAB{
 	private WebElement signInLink;
 
 	public MainPage() {
-		PageFactory.initElements(driver, this);
-	//	PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
+		PageFactory.initElements(driver, this);	
 	}
 
 	public LoginPage clickSignInLink(){
